@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="dataSourceTarget" class="com.thewebpagestudio.util.jdbc.BasicDataSource">
+		<constructor-arg index="0">
+			<value>net.sourceforge.jtds.jdbc.Driver</value>
+		</constructor-arg>
+		<constructor-arg index="1">
+			<value>jdbc:jtds:sqlserver://localhost:1433;DatabaseName=kudos_db</value>
+		</constructor-arg>
+		<constructor-arg index="2">
+			<value>sa</value>
+		</constructor-arg>
+		<constructor-arg index="3">
+			<value>sasa</value>
+		</constructor-arg>
+	</bean>
+	<bean id="dataSource" class="com.p6spy.engine.spy.P6DataSource" destroy-method="close">
+		<constructor-arg>
+			<ref local="dataSourceTarget" />
+		</constructor-arg>
+	</bean>
+	<!-- 基本的BaseJdbcDao配置，设置DataSource来获取JdbcTemplate实例 -->
+	<bean id="springJdbcDs" class="com.jujie.global.dao.BaseJdbcDao">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>
+</beans>

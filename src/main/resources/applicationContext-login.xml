@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="loginDao" parent="springJdbcDs" class="com.jujie.login.dao.LoginDaoImpl" />
+	<bean id="roleDao" parent="springJdbcDs" class="com.jujie.login.dao.RoleDaoImpl" />
+	<bean id="functionsDao" parent="springJdbcDs" class="com.jujie.login.dao.FunctionsDaoImpl" />
+		
+	<bean id="loginRoleFunServer" class="com.jujie.login.server.LoginRoleFunServerImpl" >
+		<property name="loginDao" ref="loginDao"></property>
+		<property name="roleDao" ref="roleDao"></property>
+		<property name="functionsDao" ref="functionsDao"></property>
+	</bean>
+</beans>

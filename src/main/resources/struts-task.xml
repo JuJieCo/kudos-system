@@ -1,0 +1,21 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+     <package name="taskPackage" namespace="/task" extends="struts-global">  
+        <action name="taskAction" class="com.jujie.task.action.TaskAction">
+        	<result name="tasklist">/task/task_list.jsp</result>
+        	<result name="tasklist2">/task/task_list2.jsp</result>
+        	<result name="tasklist3">/task/task_list3.jsp</result>
+        	<result name="mytasklist">/task/mytask_list.jsp</result>
+        	<result name="taskProgresslist">/task/taskprogress_list.jsp</result>
+        	<result name="taskProgresslist2">/task/taskprogress_list2.jsp</result>
+        	<result name="taskaddmod">/task/task_addmod.jsp</result>
+        	<result name="taskProgressaddmod">/task/taskprogress_addmod.jsp</result>
+        </action>
+     </package>
+     
+</struts>
+
+

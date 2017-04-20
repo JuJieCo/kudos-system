@@ -1,0 +1,30 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+     <package name="funrolePackage" namespace="/login" extends="struts-global">  
+        <action name="functionsAction" class="com.jujie.login.action.FunctionsAction">
+        	<result name="funlist">/login/fun_list.jsp</result>
+        	<result name="funaddmod">/login/fun_addmod.jsp</result>
+        </action>
+        <action name="roleAction" class="com.jujie.login.action.RoleAction">
+        	<result name="rolelist">/login/role_list.jsp</result>
+        	<result name="roleaddmod">/login/role_addmod.jsp</result>
+        	<result name="roleauthorize">/login/role_author.jsp</result>
+        </action>
+     </package>
+     
+     <package name="loginPackage" namespace="/login" extends="struts-global-non">  
+        <action name="loginAction" class="com.jujie.login.action.LoginAction">
+        	<result name="loginlist">/login/login_list.jsp</result>
+        	<result name="loginaddmod">/login/login_addmod.jsp</result>
+        	<result name="loginauthorize">/login/login_author.jsp</result>
+        	<result name="login">/login.jsp</result>
+        	<result name="index">/common/index.jsp</result>
+        </action>
+     </package>
+     
+</struts>
+
+
